@@ -1,0 +1,38 @@
+# modules:
+#   jira:projectPage:
+#     - key: jira-transcript-summarizer-hello-world-project-page
+#       resource: main
+#       resolver:
+#         function: resolver
+#       title: jira-transcript-summarizer
+#   function:
+#     - key: resolver
+#       handler: index.handler
+# resources:
+#   - key: main
+#     path: static/hello-world/build
+# app:
+#   runtime:
+#     name: nodejs20.x
+#   id: ari:cloud:ecosystem::app/0e4e4020-3e7a-450b-9435-22ad3df09eed
+
+modules:
+  jira:projectPage:
+    - key: TM
+      resource: main
+      title: Jira Transcript Summarizer
+      layout: basic
+  function:
+    - key: handle-transcript
+      handler: index.handleTranscript
+resources:
+  - key: main
+    path: static/build
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/0e4e4020-3e7a-450b-9435-22ad3df09eed  # This is your app's unique identifier
+permissions:
+  scopes:
+    - write:jira-work
+    - read:jira-work
