@@ -1,7 +1,7 @@
 import api from '@forge/api';
 import axios from 'axios';
 
-const OPENAI_API_KEY = 'key here'
+const OPENAI_API = 'key here'
 async function summarizeTranscript(transcript) {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
@@ -11,7 +11,7 @@ async function summarizeTranscript(transcript) {
     },
     {
       headers: {
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${OPENAI_API}`,
         'Content-Type': 'application/json'
       }
     }
