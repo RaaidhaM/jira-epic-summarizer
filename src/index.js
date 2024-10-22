@@ -1,8 +1,7 @@
 import api from '@forge/api';
 import axios from 'axios';
 
-const OPENAI_API_KEY = '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';
-
+const OPENAI_API_KEY = 'key here'
 async function summarizeTranscript(transcript) {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
